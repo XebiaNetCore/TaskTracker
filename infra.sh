@@ -49,10 +49,10 @@ log()
 
         log "Adding projects to solution ...."
     cd ..
-    dotnet addn sln "src/$1.Api/$1.Api.csproj"
-    dotnet addn sln "src/$1.Api.Common/$1.Api.Common.csproj"
-    dotnet addn sln "src/$1.Api.Services.Identity/$1.Api.Services.Identity.csproj"
-    dotnet addn sln "src/$1.Api.Services.Tasks/$1.Api.Services.Tasks.csproj"
+    dotnet add sln "src/$1.Api/$1.Api.csproj"
+    dotnet add sln "src/$1.Api.Common/$1.Api.Common.csproj"
+    dotnet add sln "src/$1.Api.Services.Identity/$1.Api.Services.Identity.csproj"
+    dotnet add sln "src/$1.Api.Services.Tasks/$1.Api.Services.Tasks.csproj"
 
 
 }
