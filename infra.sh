@@ -49,12 +49,39 @@ log()
 
         log "Adding projects to solution ...."
     cd ..
-    dotnet add sln "src/$1.Api/$1.Api.csproj"
-    dotnet add sln "src/$1.Api.Common/$1.Api.Common.csproj"
-    dotnet add sln "src/$1.Api.Services.Identity/$1.Api.Services.Identity.csproj"
-    dotnet add sln "src/$1.Api.Services.Tasks/$1.Api.Services.Tasks.csproj"
+    dotnet  sln add "src/$1.Api/$1.Api.csproj"
+    dotnet  sln add "src/$1.Api.Common/$1.Api.Common.csproj"
+    dotnet  sln add "src/$1.Api.Services.Identity/$1.Api.Services.Identity.csproj"
+    dotnet  sln add "src/$1.Api.Services.Tasks/$1.Api.Services.Tasks.csproj"
+
+    log "adding nuget dependencies...... to common project "
+
+    dotnet add "src/$1.Api.Common/$1.Api.Common.csproj" package Microsoft.AspNetCore -v 2.0.0
+    dotnet add "src/$1.Api.Common/$1.Api.Common.csproj" package Microsoft.AspNetCore.Hosting -v 2.0.0
+    dotnet add "src/$1.Api.Common/$1.Api.Common.csproj" package Microsoft.AspNetCore.Authentication.JwtBearer -v 2.0.0
+    dotnet add "src/$1.Api.Common/$1.Api.Common.csproj" package Microsoft.IdentityModel.Tokens -v 5.1.4
+    dotnet add "src/$1.Api.Common/$1.Api.Common.csproj" package MongoDB.Driver -v 2.4.4
+    dotnet add "src/$1.Api.Common/$1.Api.Common.csproj" package RawRabbit -v 2.0.0-beta8
+    dotnet add "src/$1.Api.Common/$1.Api.Common.csproj" package Rabbit.DependencyInjection.ServiceCollection -v 2.0.0-beta8
+    dotnet add "src/$1.Api.Common/$1.Api.Common.csproj" package RawRabbit.Operations.Publish -v 2.0.0-beta8
+    dotnet add "src/$1.Api.Common/$1.Api.Common.csproj" package RawRabbit.Operations.Subscribe -v 2.0.0-beta8
 
 
+    dotnet add "src/$1.Api/$1.Api.csproj" package Microsoft.AspNetCore.All -v 2.0.0
+    dotnet add "src/$1.Api/$1.Api.csproj" package MongoDB.Driver -v 2.4.4
+    dotnet add "src/$1.Api/$1.Api.csproj" package RawRabbit -v 2.0.0-beta8
+    dotnet add "src/$1.Api/$1.Api.csproj" package Rabbit.DependencyInjection.ServiceCollection -v 2.0.0-beta8
+    dotnet add "src/$1.Api/$1.Api.csproj" package RawRabbit.Operations.Publish -v 2.0.0-beta8
+    dotnet add "src/$1.Api/$1.Api.csproj" package RawRabbit.Operations.Subscribe -v 2.0.0-beta8
+    
+
+    dotnet add "src/$1.Api/$1.Api.csproj" package Microsoft.AspNetCore.All -v 2.0.0
+    dotnet add "src/$1.Api/$1.Api.csproj" package MongoDB.Driver -v 2.4.4
+    dotnet add "src/$1.Api/$1.Api.csproj" package RawRabbit -v 2.0.0-beta8
+    dotnet add "src/$1.Api/$1.Api.csproj" package Rabbit.DependencyInjection.ServiceCollection -v 2.0.0-beta8
+    dotnet add "src/$1.Api/$1.Api.csproj" package RawRabbit.Operations.Publish -v 2.0.0-beta8
+    dotnet add "src/$1.Api/$1.Api.csproj" package RawRabbit.Operations.Subscribe -v 2.0.0-beta8
+    
 }
 log()
 {
