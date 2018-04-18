@@ -1,7 +1,6 @@
 # TaskTracker
 A Task tracker  Application 
 
-Task  Tracker 
 
 # Key  Design Approaches to  to be taken #
 
@@ -25,7 +24,7 @@ Task  Tracker
   * As a Team Member  I should be able to  change  my default Password.
   * As an  Admin  User  I should be  able to  create  a  new  Sprint definition
       - SprintID (String)
-      - StartDate
+      - StartDateu 
       -	EndDate
   	  - CreatedDate
   	  - CreatedBy

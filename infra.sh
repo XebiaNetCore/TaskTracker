@@ -75,13 +75,56 @@ log()
     dotnet add "src/$1.Api/$1.Api.csproj" package RawRabbit.Operations.Subscribe -v 2.0.0-beta8
     
 
-    dotnet add "src/$1.Api/$1.Api.csproj" package Microsoft.AspNetCore.All -v 2.0.0
-    dotnet add "src/$1.Api/$1.Api.csproj" package MongoDB.Driver -v 2.4.4
-    dotnet add "src/$1.Api/$1.Api.csproj" package RawRabbit -v 2.0.0-beta8
-    dotnet add "src/$1.Api/$1.Api.csproj" package Rabbit.DependencyInjection.ServiceCollection -v 2.0.0-beta8
-    dotnet add "src/$1.Api/$1.Api.csproj" package RawRabbit.Operations.Publish -v 2.0.0-beta8
-    dotnet add "src/$1.Api/$1.Api.csproj" package RawRabbit.Operations.Subscribe -v 2.0.0-beta8
+    dotnet add "src/$1.Api.Services.Identity/$1.Api.Services.Identity.csproj" package Microsoft.AspNetCore.All -v 2.0.0
+    dotnet add "src/$1.Api.Services.Identity/$1.Api.Services.Identity.csproj" package MongoDB.Driver -v 2.4.4
+    dotnet add "src/$1.Api.Services.Identity/$1.Api.Services.Identity.csproj" package RawRabbit -v 2.0.0-beta8
+    dotnet add "src/$1.Api.Services.Identity/$1.Api.Services.Identity.csproj" package Rabbit.DependencyInjection.ServiceCollection -v 2.0.0-beta8
+    dotnet add "src/$1.Api.Services.Identity/$1.Api.Services.Identity.csproj" package RawRabbit.Operations.Publish -v 2.0.0-beta8
+    dotnet add "src/$1.Api.Services.Identity/$1.Api.Services.Identity.csproj" package RawRabbit.Operations.Subscribe -v 2.0.0-beta8
     
+
+    dotnet add "src/$1.Api.Services.Tasks/$1.Api.Services.Tasks.csproj" package Microsoft.AspNetCore.All -v 2.0.0
+    dotnet add "src/$1.Api.Services.Tasks/$1.Api.Services.Tasks.csproj" package MongoDB.Driver -v 2.4.4
+    dotnet add "src/$1.Api.Services.Tasks/$1.Api.Services.Tasks.csproj" package RawRabbit -v 2.0.0-beta8
+    dotnet add "src/$1.Api.Services.Tasks/$1.Api.Services.Tasks.csproj" package Rabbit.DependencyInjection.ServiceCollection -v 2.0.0-beta8
+    dotnet add "src/$1.Api.Services.Tasks/$1.Api.Services.Tasks.csproj" package RawRabbit.Operations.Publish -v 2.0.0-beta8
+    dotnet add "src/$1.Api.Services.TAsks/$1.Api.Services.Tasks.csproj" package RawRabbit.Operations.Subscribe -v 2.0.0-beta8
+
+
+    dotnet add "test/$1.Api.Test/$1.Api.Test.csproj" package FluentAssertions -v 4.19.4
+    dotnet add "test/$1.Api.Test/$1.Api.Test.csproj" package Microsoft.NET.Test.Sdk -v 15.3.0-preview-20170628-02
+    dotnet add "test/$1.Api.Test/$1.Api.Test.csproj" package Microsoft.AspNetCore.TestHost -v 2.0.0
+    dotnet add "test/$1.Api.Test/$1.Api.Test.csproj" package Moq -v 4.7.142
+    dotnet add "test/$1.Api.Test/$1.Api.Test.csproj" package xunit -v 2.2.0
+    dotnet add "test/$1.Api.Test/$1.Api.Test.csproj" package xunit.runner.visualstudio -v 2.2.0
+    
+    
+    dotnet add "test/$1.Common.Test/$1.Common.Test.csproj" package FluentAssertions -v 4.19.4
+    dotnet add "test/$1.Common.Test/$1.Common.Test.csproj" package Microsoft.NET.Test.Sdk -v 15.3.0-preview-20170628-02
+    dotnet add "test/$1.Common.Test/$1.Common.Test.csproj" package Microsoft.AspNetCore.TestHost -v 2.0.0
+    dotnet add "test/$1.Common.Test/$1.Common.Test.csproj" package Moq -v 4.7.142
+    dotnet add "test/$1.Common.Test/$1.Common.Test.csproj" package xunit -v 2.2.0
+    dotnet add "test/$1.Common.Test/$1.Common.Test.csproj" package xunit.runner.visualstudio -v 2.2.0
+    
+    
+    dotnet add "test/$1.Services.Identity.Test/$1.Services.Identity.Test.csproj" package FluentAssertions -v 4.19.4
+    dotnet add "test/$1.Services.Identity.Test/$1.Services.Identity.Test.csproj" package Microsoft.NET.Test.Sdk -v 15.3.0-preview-20170628-02
+    dotnet add "test/$1.Services.Identity.Test/$1.Services.Identity.Test.csproj" package Microsoft.AspNetCore.TestHost -v 2.0.0
+    dotnet add "test/$1.Services.Identity.Test/$1.Services.Identity.Test.csproj" package Moq -v 4.7.142
+    dotnet add "test/$1.Services.Identity.Test/$1.Services.Identity.Test.csproj" package xunit -v 2.2.0
+    dotnet add "test/$1.Services.Identity.Test/$1.Services.Identity.Test.csproj" package xunit.runner.visualstudio -v 2.2.0
+
+
+    dotnet add "test/$1.Services.Task.Test/$1.Services.Task.Test.csproj" package FluentAssertions -v 4.19.4
+    dotnet add "test/$1.Services.Task.Test/$1.Services.Task.Test.csproj" package Microsoft.NET.Test.Sdk -v 15.3.0-preview-20170628-02
+    dotnet add "test/$1.Services.Task.Test/$1.Services.Task.Test.csproj" package Microsoft.AspNetCore.TestHost -v 2.0.0
+    dotnet add "test/$1.Services.Task.Test/$1.Services.Task.Test.csproj" package Moq -v 4.7.142
+    dotnet add "test/$1.Services.Task.Test/$1.Services.Task.Test.csproj" package xunit -v 2.2.0
+    dotnet add "test/$1.Services.Task.Test/$1.Services.Task.Test.csproj" package xunit.runner.visualstudio -v 2.2.0
+
+
+
+
 }
 log()
 {

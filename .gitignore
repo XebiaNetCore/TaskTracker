@@ -25,6 +25,10 @@ bin/
 Bin/
 obj/
 Obj/
+*obj/
+*Obj/
+*.cache
+*.targets
 
 # Visual Studio 2015 cache/options directory
 .vs/
