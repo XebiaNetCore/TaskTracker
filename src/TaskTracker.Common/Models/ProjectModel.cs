@@ -1,9 +1,11 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
-namespace Models
+namespace TaskTracker.Common.Models
 {
     public class ProjectModel
     {
+        [Key]
         public string ProjectID { get; set; }
         public string ProjectName { get; set; }
         public string ProjectDescription { get; set; }

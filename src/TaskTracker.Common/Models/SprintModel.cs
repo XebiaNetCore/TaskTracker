@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Models
+namespace TaskTracker.Common.Models
 {
     public class SprintModel
     {
