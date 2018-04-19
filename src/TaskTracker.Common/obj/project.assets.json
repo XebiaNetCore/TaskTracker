@@ -948,7 +948,7 @@
           "lib/netstandard1.5/MongoDB.Driver.Core.dll": {}
         }
       },
-      "NETStandard.Library/2.0.0": {
+      "NETStandard.Library/2.0.1": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.0"
@@ -3500,10 +3500,10 @@
         "mongodb.driver.core.nuspec"
       ]
     },
-    "NETStandard.Library/2.0.0": {
-      "sha512": "7jnbRU+L08FXKMxqUflxEXtVymWvNOrS8yHgu9s6EM8Anr6T/wIX4nZ08j/u3Asz+tCufp3YVwFSEvFTPYmBPA==",
+    "NETStandard.Library/2.0.1": {
+      "sha512": "oA6nwv9MhEKYvLpjZ0ggSpb1g4CQViDVQjLUcDWg598jtvJbpfeP2reqwI1GLW2TbxC/Ml7xL6BBR1HmKPXlTg==",
       "type": "package",
-      "path": "netstandard.library/2.0.0",
+      "path": "netstandard.library/2.0.1",
       "files": [
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
@@ -3624,7 +3624,7 @@
         "build/netstandard2.0/ref/netstandard.dll",
         "build/netstandard2.0/ref/netstandard.xml",
         "lib/netstandard1.0/_._",
-        "netstandard.library.2.0.0.nupkg.sha512",
+        "netstandard.library.2.0.1.nupkg.sha512",
         "netstandard.library.nuspec"
       ]
     },
@@ -7782,7 +7782,7 @@
       "Microsoft.AspNetCore.Hosting >= 2.0.0",
       "Microsoft.IdentityModel.Tokens >= 5.1.4",
       "MongoDB.Driver >= 2.4.4",
-      "NETStandard.Library >= 2.0.0",
+      "NETStandard.Library >= 2.0.1",
       "RawRabbit >= 2.0.0-beta8",
       "RawRabbit.DependencyInjection.ServiceCollection >= 2.0.0-beta8",
       "RawRabbit.Operations.Publish >= 2.0.0-beta8",
@@ -7790,23 +7790,23 @@
     ]
   },
   "packageFolders": {
-    "/home/priyanku/.nuget/packages/": {},
-    "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\saurabhsrivastava\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/priyanku/dotnetcore/TaskTracker/src/TaskTracker.Common/TaskTracker.Common.csproj",
+      "projectUniqueName": "D:\\GitRepo\\TaskTracker\\src\\TaskTracker.Common\\TaskTracker.Common.csproj",
       "projectName": "TaskTracker.Common",
-      "projectPath": "/home/priyanku/dotnetcore/TaskTracker/src/TaskTracker.Common/TaskTracker.Common.csproj",
-      "packagesPath": "/home/priyanku/.nuget/packages/",
-      "outputPath": "/home/priyanku/dotnetcore/TaskTracker/src/TaskTracker.Common/obj/",
+      "projectPath": "D:\\GitRepo\\TaskTracker\\src\\TaskTracker.Common\\TaskTracker.Common.csproj",
+      "packagesPath": "C:\\Users\\saurabhsrivastava\\.nuget\\packages\\",
+      "outputPath": "D:\\GitRepo\\TaskTracker\\src\\TaskTracker.Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/home/priyanku/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\saurabhsrivastava\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
@@ -7828,47 +7828,47 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
-          "NETStandard.Library": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "2.0.0",
-            "autoReferenced": true
-          },
           "Microsoft.AspNetCore": {
             "target": "Package",
-            "version": "2.0.0"
-          },
-          "Microsoft.AspNetCore.Hosting": {
-            "target": "Package",
-            "version": "2.0.0"
+            "version": "[2.0.0, )"
           },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
-            "version": "2.0.0"
+            "version": "[2.0.0, )"
+          },
+          "Microsoft.AspNetCore.Hosting": {
+            "target": "Package",
+            "version": "[2.0.0, )"
           },
           "Microsoft.IdentityModel.Tokens": {
             "target": "Package",
-            "version": "5.1.4"
+            "version": "[5.1.4, )"
           },
           "MongoDB.Driver": {
             "target": "Package",
-            "version": "2.4.4"
+            "version": "[2.4.4, )"
+          },
+          "NETStandard.Library": {
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[2.0.1, )",
+            "autoReferenced": true
           },
           "RawRabbit": {
             "target": "Package",
-            "version": "2.0.0-beta8"
+            "version": "[2.0.0-beta8, )"
           },
           "RawRabbit.DependencyInjection.ServiceCollection": {
             "target": "Package",
-            "version": "2.0.0-beta8"
+            "version": "[2.0.0-beta8, )"
           },
           "RawRabbit.Operations.Publish": {
             "target": "Package",
-            "version": "2.0.0-beta8"
+            "version": "[2.0.0-beta8, )"
           },
           "RawRabbit.Operations.Subscribe": {
             "target": "Package",
-            "version": "2.0.0-beta8"
+            "version": "[2.0.0-beta8, )"
           }
         },
         "imports": [
