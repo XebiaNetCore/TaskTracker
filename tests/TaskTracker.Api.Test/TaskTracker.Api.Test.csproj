@@ -2,7 +2,8 @@
 
     <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-
+    <DocumentationFile>bin\Debug\netcoreapp2.0\testhost.xml</DocumentationFile>
+    <NoWarn>1591;</NoWarn>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
   

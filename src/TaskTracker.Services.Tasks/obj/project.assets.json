@@ -6031,7 +6031,7 @@
       ]
     },
     "Microsoft.CodeAnalysis.Analyzers/1.1.0": {
-      "sha512": "HS3iRWZKcUw/8eZ/08GXKY2Bn7xNzQPzf8gRPHGSowX7u7XXu9i9YEaBeBNKUXWfI7qjvT2zXtLUvbN0hds8vg==",
+      "sha512": "tONT5s2OMPnMY4pwGec33RGRTQCFvIdBjjA7xkcYqlBvTk7b2TwBbX9bvXXo5xdF9CzkQrZN66zbE8ic0vX/Qg==",
       "type": "package",
       "path": "microsoft.codeanalysis.analyzers/1.1.0",
       "files": [
@@ -9146,7 +9146,7 @@
       ]
     },
     "System.Diagnostics.Process/4.1.0": {
-      "sha512": "mpVZ5bnlSs3tTeJ6jYyDJEIa6tavhAd88lxq1zbYhkkCu0Pno2+gHXcvZcoygq2d8JxW3gojXqNJMTAshduqZA==",
+      "sha512": "riK71FIQuAo2k/NxYSOCflgC7H69aZ6bGJ6nRRZNM6Lr2Kyba6nk6xRb4iIGr9KkbJCZAp/7agKLyzqR8L9Ktw==",
       "type": "package",
       "path": "system.diagnostics.process/4.1.0",
       "files": [
@@ -10036,7 +10036,7 @@
       ]
     },
     "System.Linq.Queryable/4.0.1": {
-      "sha512": "Yn/WfYe9RoRfmSLvUt2JerP0BTGGykCZkQPgojaxgzF2N0oPo+/AhB8TXOpdCcNlrG3VRtsamtK2uzsp3cqRVw==",
+      "sha512": "kUM5xjYJ3HKC8sG9MWPXaGo07HnoAQ0Px8dISS7UPoxUYaM5ck0tkTvKW0i6KBJAZwQtqSYQuX0Ay5o1wAQ6eA==",
       "type": "package",
       "path": "system.linq.queryable/4.0.1",
       "files": [
@@ -13024,23 +13024,23 @@
     ]
   },
   "packageFolders": {
-    "/home/priyanku/.nuget/packages/": {},
-    "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\gnagri\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/priyanku/dotnetcore/TaskTracker/src/TaskTracker.Services.Tasks/TaskTracker.Services.Tasks.csproj",
+      "projectUniqueName": "c:\\Users\\gnagri\\Documents\\GitHub\\TaskTracker\\src\\TaskTracker.Services.Tasks\\TaskTracker.Services.Tasks.csproj",
       "projectName": "TaskTracker.Services.Tasks",
-      "projectPath": "/home/priyanku/dotnetcore/TaskTracker/src/TaskTracker.Services.Tasks/TaskTracker.Services.Tasks.csproj",
-      "packagesPath": "/home/priyanku/.nuget/packages/",
-      "outputPath": "/home/priyanku/dotnetcore/TaskTracker/src/TaskTracker.Services.Tasks/obj/",
+      "projectPath": "c:\\Users\\gnagri\\Documents\\GitHub\\TaskTracker\\src\\TaskTracker.Services.Tasks\\TaskTracker.Services.Tasks.csproj",
+      "packagesPath": "C:\\Users\\gnagri\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\gnagri\\Documents\\GitHub\\TaskTracker\\src\\TaskTracker.Services.Tasks\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/home/priyanku/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\gnagri\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
@@ -13051,8 +13051,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "/home/priyanku/dotnetcore/TaskTracker/src/TaskTracker.Common/TaskTracker.Common.csproj": {
-              "projectPath": "/home/priyanku/dotnetcore/TaskTracker/src/TaskTracker.Common/TaskTracker.Common.csproj"
+            "c:\\Users\\gnagri\\Documents\\GitHub\\TaskTracker\\src\\TaskTracker.Common\\TaskTracker.Common.csproj": {
+              "projectPath": "c:\\Users\\gnagri\\Documents\\GitHub\\TaskTracker\\src\\TaskTracker.Common\\TaskTracker.Common.csproj"
             }
           }
         }
@@ -13066,30 +13066,30 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "Microsoft.NETCore.App": {
-            "target": "Package",
-            "version": "2.0.0",
-            "autoReferenced": true
-          },
           "Microsoft.AspNetCore.All": {
             "target": "Package",
-            "version": "2.0.0"
+            "version": "[2.0.0, )"
+          },
+          "Microsoft.NETCore.App": {
+            "target": "Package",
+            "version": "[2.0.0, )",
+            "autoReferenced": true
           },
           "RawRabbit": {
             "target": "Package",
-            "version": "2.0.0-beta8"
+            "version": "[2.0.0-beta8, )"
           },
           "RawRabbit.DependencyInjection.ServiceCollection": {
             "target": "Package",
-            "version": "2.0.0-beta8"
+            "version": "[2.0.0-beta8, )"
           },
           "RawRabbit.Operations.Publish": {
             "target": "Package",
-            "version": "2.0.0-beta8"
+            "version": "[2.0.0-beta8, )"
           },
           "RawRabbit.Operations.Subscribe": {
             "target": "Package",
-            "version": "2.0.0-beta8"
+            "version": "[2.0.0-beta8, )"
           }
         },
         "imports": [
