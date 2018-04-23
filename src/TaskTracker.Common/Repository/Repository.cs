@@ -1,20 +1,19 @@
 using System;
 using System.Collections.Generic;
-using TaskTracker.Common.Cache;
-using TaskTracker.Common.DataStore;
+using TaskTracker.Common.DataStrategy;
 
 namespace TaskTracker.Common.Repository
 {
-    public class Repository<T> : IRepository<T> where T : class
+    public abstract class Repository<T> : IRepository<T> where T : class
     {
         protected ICache<T> cacheStrategy;
 
-        protected IDataStore<T> dataStoreStrategy;
+        protected IDbStrategy<T> dbStrategy;
 
-        public Repository(ICache<T> cacheStrategy, IDataStore<T> dataStoreStrategy)
+        public Repository(ICache<T> cacheStrategy, IDbStrategy<T> dbStrategy)
         {
             this.cacheStrategy = cacheStrategy;
-            this.dataStoreStrategy = dataStoreStrategy;
+            this.dbStrategy = dbStrategy;
         }
 
         public T GetById(string id)
@@ -25,7 +24,7 @@ namespace TaskTracker.Common.Repository
                 return item;
             }
 
-            item = this.dataStoreStrategy.GetById(id);
+            item = this.dbStrategy.GetById(id);
             this.cacheStrategy.InsertOrUpdate(item);
 
             return item;
@@ -41,12 +40,7 @@ namespace TaskTracker.Common.Repository
             throw new NotImplementedException();
         }
 
-        public T Insert(T entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public T Update(T entity)
+        public T InsertOrUpdate(T entity)
         {
             throw new NotImplementedException();
         }

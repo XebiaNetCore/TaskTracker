@@ -8,7 +8,6 @@ namespace TaskTracker.Common.Repository
         IEnumerable<T> GetAll();
         T Delete(string id);
         T GetById(string id);
-        T Insert(T entity);
-        T Update(T entity);
+        T InsertOrUpdate(T entity);
     }
 }

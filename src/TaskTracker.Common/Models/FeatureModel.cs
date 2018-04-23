@@ -6,13 +6,13 @@ namespace TaskTracker.Common.Models
     {
         public string FeatureName { get; set; }
         public string FeatureDescription { get; set; }
-        public string ProjectID { get; set; }
-        public string SprintID { get; set; }
-        // public string Tags[] { get; set; }
-        // public string RankID { get; set; }
-        public string FeatureOwnerID { get; set; }
+        public Guid ProjectID { get; set; }
+        public Guid SprintID { get; set; }
+        public string[] Tags { get; set; }
+        public int RankID { get; set; }
+        public Guid FeatureOwnerID { get; set; }
         public DateTime CreatedDate { get; set; }
-        public string CreatedBy { get; set; }
+        public Guid CreatedBy { get; set; }
         public DateTime LastModifiedDate { get; set; }
         public string LastModifiedBy { get; set; }
     }    

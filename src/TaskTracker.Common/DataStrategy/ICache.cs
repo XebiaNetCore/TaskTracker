@@ -1,6 +1,6 @@
 using System;
 
-namespace TaskTracker.Common.Cache
+namespace TaskTracker.Common.DataStrategy
 {
     public interface ICache<T> where T : class
     {
