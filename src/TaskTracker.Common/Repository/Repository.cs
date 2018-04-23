@@ -6,11 +6,11 @@ namespace TaskTracker.Common.Repository
 {
     public abstract class Repository<T> : IRepository<T> where T : class
     {
-        protected ICache<T> cacheStrategy;
+        protected ICacheStrategy<T> cacheStrategy;
 
         protected IDbStrategy<T> dbStrategy;
 
-        public Repository(ICache<T> cacheStrategy, IDbStrategy<T> dbStrategy)
+        public Repository(ICacheStrategy<T> cacheStrategy, IDbStrategy<T> dbStrategy)
         {
             this.cacheStrategy = cacheStrategy;
             this.dbStrategy = dbStrategy;
@@ -30,19 +30,10 @@ namespace TaskTracker.Common.Repository
             return item;
         }
 
-        public IEnumerable<T> GetAll()
-        {
-            throw new NotImplementedException();
-        }
+        public abstract IEnumerable<T> GetAll();
 
-        public T Delete(string id)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract T Delete(string id);
 
-        public T InsertOrUpdate(T entity)
-        {
-            throw new NotImplementedException();
-        }
+        public abstract T InsertOrUpdate(T entity);
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace TaskTracker.Common.Models
 {
@@ -6,6 +7,8 @@ namespace TaskTracker.Common.Models
     {
         public string TaskName { get; set; }
         public string TaskDescription { get; set; }
+        [Key]
+        public Guid TaskID { get; set; }
         public Guid TaskOwnerID { get; set; }
         public Guid SprintID { get; set; }
         public Guid FeatureID { get; set; }

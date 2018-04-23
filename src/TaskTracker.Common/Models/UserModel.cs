@@ -1,9 +1,11 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace TaskTracker.Common.Models
 {
     public class UserModel
     {
+        [Key]
         public Guid UserID { get; set; }
 
         public string Username { get; set; }

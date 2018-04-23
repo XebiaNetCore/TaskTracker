@@ -1,9 +1,11 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace TaskTracker.Common.Models
 {
     public class SprintModel
     {
+        [Key]
         public Guid SprintID { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }

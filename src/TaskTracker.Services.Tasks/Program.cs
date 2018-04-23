@@ -7,6 +7,9 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using TaskTracker.Services.Tasks.EF;
+using TaskTracker.Common.Models;
+using TaskTracker.Services.Tasks.DataStrategy;
 
 namespace TaskTracker.Services.Tasks
 {
@@ -14,7 +17,26 @@ namespace TaskTracker.Services.Tasks
     {
         public static void Main(string[] args)
         {
-            BuildWebHost(args).Run();
+            //BuildWebHost(args).Run();
+
+            using(var dbContext = new DataContext())
+            {
+                var testModel = new TaskModel
+                {
+                    TaskName = "Test Task",
+                    TaskDescription = "Test Description",
+                    CreatedDate = DateTime.Now
+                };
+ 
+                dbContext.tasks.Add(testModel);
+ 
+                dbContext.SaveChanges();
+
+                foreach(var task in dbContext.tasks)
+                {
+                    Console.WriteLine(task.TaskName + "\n" + task.TaskDescription + "\n" + task.CreatedDate.Date);
+                }
+            }
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
