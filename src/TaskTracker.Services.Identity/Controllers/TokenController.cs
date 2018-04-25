@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.IdentityModel.Tokens.Jwt;
@@ -9,6 +10,7 @@ using System.Security.Claims;
 using System.Text;
 using TaskTracker.Services.Identity.DbRepository;
 using TaskTracker.Services.Identity.Model;
+using TaskTracker.Services.Identity.Security;
 
 namespace TaskTracker.Services.Identity.Controllers
 {
@@ -17,22 +19,24 @@ namespace TaskTracker.Services.Identity.Controllers
     {
         private IConfiguration _config;
         private readonly RepositoryContext _dbContext;
-        public TokenController(IConfiguration config, RepositoryContext dbContext)
+        private readonly IJwtTokenGenerator _jwtTokenGenerator;
+        public TokenController(IConfiguration config, RepositoryContext dbContext, IJwtTokenGenerator jwtTokenGenerator)
         {
             _config = config;
             _dbContext = dbContext;
-            if (!_dbContext.Registration.Any())
-            {
-                Registration r = new Registration
-                {
-                    Email = "ssrivastava@xebia.com",
-                    Password = "admin@123",
-                    CreateDate = DateTime.UtcNow,
-                    Role = Registration.SystemRole.Admin
-                };
-                _dbContext.Registration.Add(r);
-                _dbContext.SaveChangesAsync();
-            }
+            _jwtTokenGenerator = jwtTokenGenerator;
+            // if (!_dbContext.Registration.Any())
+            // {
+            //     Registration r = new Registration
+            //     {
+            //         Email = "ssrivastava@xebia.com",
+            //         Password = "admin@123",
+            //         CreateDate = DateTime.UtcNow,
+            //         Role = Registration.SystemRole.Admin
+            //     };
+            //     _dbContext.Registration.Add(r);
+            //     _dbContext.SaveChangesAsync();
+            // }
         }
 
         [AllowAnonymous]
@@ -51,22 +55,8 @@ namespace TaskTracker.Services.Identity.Controllers
         }
         private string BuildToken(UserModel user)
         {
-            var claims = new[] {
-                new Claim(JwtRegisteredClaimNames.Sub, user.Name),
-                new Claim(JwtRegisteredClaimNames.Email, user.Email),
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
-               };
-
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-
-            var token = new JwtSecurityToken(_config["Jwt:Issuer"],
-              _config["Jwt:Issuer"],
-              claims,
-              expires: DateTime.Now.AddMinutes(30),
-              signingCredentials: creds);
-
-            return new JwtSecurityTokenHandler().WriteToken(token);
+            var token = _jwtTokenGenerator.CreateToken(user.Name, user.Email);
+            return token;
         }
         private UserModel Authenticate(LoginModel login)
         {

@@ -23,7 +23,7 @@
             "preLaunchTask": "build",
             "program": "${workspaceFolder}/src/TaskTracker.Services.Identity/bin/Debug/netcoreapp2.0/TaskTracker.Services.Identity.dll",
             "args": [],
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/src/TaskTracker.Services.Identity",
             "stopAtEntry": false,
             "internalConsoleOptions": "openOnSessionStart",
             "launchBrowser": {

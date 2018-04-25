@@ -8,7 +8,7 @@ namespace TaskTracker.Services.Identity.DbRepository
     {
         public RepositoryContext(DbContextOptions options) : base(options)
         {
-
+            this.Database.EnsureCreated();
         }
 
         public DbSet<Registration> Registration { get; set; }
