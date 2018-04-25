@@ -25,18 +25,6 @@ namespace TaskTracker.Services.Identity.Controllers
             _config = config;
             _dbContext = dbContext;
             _jwtTokenGenerator = jwtTokenGenerator;
-            // if (!_dbContext.Registration.Any())
-            // {
-            //     Registration r = new Registration
-            //     {
-            //         Email = "ssrivastava@xebia.com",
-            //         Password = "admin@123",
-            //         CreateDate = DateTime.UtcNow,
-            //         Role = Registration.SystemRole.Admin
-            //     };
-            //     _dbContext.Registration.Add(r);
-            //     _dbContext.SaveChangesAsync();
-            // }
         }
 
         [AllowAnonymous]
