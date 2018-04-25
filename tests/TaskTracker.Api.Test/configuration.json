@@ -1,0 +1,84 @@
+{  
+    "ReRoutes": [  
+        {  
+            "DownstreamPathTemplate": "/api/task",  
+            "DownstreamScheme": "http",  
+            "DownstreamHostAndPorts": [  
+                {  
+                  "Host": "localhost",  
+                  "Port": 9001  
+                }
+              ],  
+            "UpstreamPathTemplate": "/tasks",  
+            "UpstreamHttpMethod": [ "Get" ]            
+        },  
+        {  
+            "DownstreamPathTemplate": "/api/task/{id}",  
+            "DownstreamScheme": "http",  
+            "DownstreamHostAndPorts": [  
+                {  
+                  "Host": "localhost",  
+                  "Port": 9001  
+                }
+              ],  
+            "UpstreamPathTemplate": "/tasks/{id}",  
+            "UpstreamHttpMethod": [ "Get" ],
+            "AuthenticationOptions": {  
+                "AuthenticationProviderKey": "TestKey",  
+                "AllowedScopes": []  
+            }   
+        },
+        {  
+            "DownstreamPathTemplate": "/api/values",  
+            "DownstreamScheme": "http",  
+            "DownstreamHostAndPorts": [  
+                {  
+                  "Host": "localhost",  
+                  "Port": 2000  
+                }
+              ],  
+            "UpstreamPathTemplate": "/services",  
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {  
+            "DownstreamPathTemplate": "/api/values/{id}",  
+            "DownstreamScheme": "http",  
+            "DownstreamHostAndPorts": [  
+                {  
+                  "Host": "localhost",  
+                  "Port": 2000  
+                }
+              ],  
+            "UpstreamPathTemplate": "/services/{id}",  
+            "UpstreamHttpMethod": [ "Get" ]
+        },
+        {  
+            "DownstreamPathTemplate": "/api/values",  
+            "DownstreamScheme": "http",  
+            "DownstreamHostAndPorts": [  
+                {  
+                  "Host": "localhost",  
+                  "Port": 2000  
+                }
+              ],  
+            "UpstreamPathTemplate": "/services",  
+            "UpstreamHttpMethod": [ "Post" ]
+        },
+        {  
+            "DownstreamPathTemplate": "/api/values/{id}",  
+            "DownstreamScheme": "http",  
+            "DownstreamHostAndPorts": [  
+                {  
+                  "Host": "localhost",  
+                  "Port": 2000  
+                }
+              ],  
+            "UpstreamPathTemplate": "/services/{id}",  
+            "UpstreamHttpMethod": [ "Delete" ]
+        }
+    ],  
+    "GlobalConfiguration": {  
+        "RequestIdKey": "OcRequestId",  
+        "AdministrationPath": "/administration"
+    }  
+}  

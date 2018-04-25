@@ -7796,11 +7796,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\gnagri\\Documents\\GitHub\\TaskTracker\\src\\TaskTracker.Common\\TaskTracker.Common.csproj",
+      "projectUniqueName": "C:\\Users\\gnagri\\Documents\\GitHub\\TaskTracker\\src\\TaskTracker.Common\\TaskTracker.Common.csproj",
       "projectName": "TaskTracker.Common",
-      "projectPath": "c:\\Users\\gnagri\\Documents\\GitHub\\TaskTracker\\src\\TaskTracker.Common\\TaskTracker.Common.csproj",
+      "projectPath": "C:\\Users\\gnagri\\Documents\\GitHub\\TaskTracker\\src\\TaskTracker.Common\\TaskTracker.Common.csproj",
       "packagesPath": "C:\\Users\\gnagri\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\gnagri\\Documents\\GitHub\\TaskTracker\\src\\TaskTracker.Common\\obj\\",
+      "outputPath": "C:\\Users\\gnagri\\Documents\\GitHub\\TaskTracker\\src\\TaskTracker.Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

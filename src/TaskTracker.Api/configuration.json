@@ -1,0 +1,36 @@
+{  
+    "ReRoutes": [  
+        {  
+            "DownstreamPathTemplate": "/api/task",  
+            "DownstreamScheme": "http",  
+            "DownstreamHostAndPorts": [  
+                {  
+                  "Host": "localhost",  
+                  "Port": 9001  
+                }
+              ],  
+            "UpstreamPathTemplate": "/tasks",  
+            "UpstreamHttpMethod": [ "Get" ]            
+        },  
+        {  
+            "DownstreamPathTemplate": "/api/task/{id}",  
+            "DownstreamScheme": "http",  
+            "DownstreamHostAndPorts": [  
+                {  
+                  "Host": "localhost",  
+                  "Port": 9001  
+                }
+              ],  
+            "UpstreamPathTemplate": "/tasks/{id}",  
+            "UpstreamHttpMethod": [ "Get" ],
+            "AuthenticationOptions": {  
+                "AuthenticationProviderKey": "TestKey",  
+                "AllowedScopes": []  
+            }   
+        }
+    ],  
+    "GlobalConfiguration": {  
+        "RequestIdKey": "OcRequestId",  
+        "AdministrationPath": "/administration"
+    }  
+}  

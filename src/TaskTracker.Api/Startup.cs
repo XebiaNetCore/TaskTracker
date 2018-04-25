@@ -1,26 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using Swashbuckle.AspNetCore.Swagger;
 using TaskTracker.Api.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection;
 using System.IO;
+using Microsoft.AspNetCore.Http;
+using Ocelot.DependencyInjection;
+using CacheManager.Core;
+using Ocelot.Middleware;
+using ConfigurationBuilder = Microsoft.Extensions.Configuration.ConfigurationBuilder;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using System;
 
 namespace TaskTracker.Api
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IHostingEnvironment env)
         {
-            Configuration = configuration;
+            var builder = new ConfigurationBuilder();  
+            builder.SetBasePath(env.ContentRootPath)
+               .AddJsonFile("appsettings.json")       
+               //add configuration.json  
+               .AddJsonFile("configuration.json", optional: false, reloadOnChange: true)               
+               .AddEnvironmentVariables();  
+  
+           Configuration = builder.Build(); 
         }
 
         public IConfiguration Configuration { get; }
@@ -31,45 +38,48 @@ namespace TaskTracker.Api
             services.AddDbContext<AppDBContext>(db => 
                    db.UseInMemoryDatabase("MicroserviceDB"));
             services.AddScoped<IMicroserviceRepository,MicroserviceRepository>();
-            services.AddMvc();
-            // Register the Swagger generator, defining one or more Swagger documents
-            services.AddSwaggerGen(c => {
-              c.SwaggerDoc("v1",new Info{
-                  Title = "GatewayAPI", 
-                  Version="v1",
-                  Description = "A simple example ASP.NET Core Web API",
-                  TermsOfService = "None",
-                  Contact = new Contact{
-                      Name = "The WOW Team",
-                      Email = "corepunters@xebia.com"
-                  }
-                });
-               // Set the comments path for the Swagger JSON and UI.
-               var xmlFile = $"{Assembly.GetEntryAssembly().GetName().Name}.xml";
-               var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-               c.IncludeXmlComments(xmlPath);
-            });
-
-        
+            services.AddMvc();  
+            var audienceConfig = Configuration.GetSection("Audience");  
+  
+        var signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(audienceConfig["Key"]));  
+        var tokenValidationParameters = new TokenValidationParameters  
+        {  
+        ValidateIssuerSigningKey = true,  
+        IssuerSigningKey = signingKey,  
+        ValidateIssuer = true,  
+        ValidIssuer = audienceConfig["Issuer"],  
+        ValidateAudience = true,  
+        ValidAudience = audienceConfig["Aud"],  
+        ValidateLifetime = true,  
+        ClockSkew = TimeSpan.Zero,  
+        RequireExpirationTime = true,  
+       };  
+  
+         services.AddAuthentication(o =>
+            {
+                o.DefaultAuthenticateScheme = "TestKey";
+            })  
+            .AddJwtBearer("TestKey", x =>  
+             {  
+                 x.RequireHttpsMetadata = false;  
+                 x.TokenValidationParameters = tokenValidationParameters;  
+             });  
+  
+         services.AddOcelot(Configuration);       
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public async void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
-            // Enable middleware to serve generated Swagger as a JSON endpoint.
-            app.UseSwagger();
+            app.UseAuthentication();
 
-             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint
-             app.UseSwaggerUI(c => {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Gateway API V1");
-             });
-
-            app.UseMvc();
+            await app.UseOcelot();
+           
         }
     }
 }

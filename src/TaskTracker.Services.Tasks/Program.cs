@@ -12,14 +12,20 @@ namespace TaskTracker.Services.Tasks
 {
     public class Program
     {
-        public static void Main(string[] args)
+         public static void Main(string[] args)
         {
             BuildWebHost(args).Run();
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .ConfigureAppConfiguration(config =>
+                {                    
+                    config.AddJsonFile("appsettings.json");                  
+                    config.AddEnvironmentVariables();
+                })
                 .UseStartup<Startup>()
+                .UseUrls("http://localhost:9001")
                 .Build();
     }
 }
